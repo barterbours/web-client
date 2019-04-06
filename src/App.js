@@ -10,6 +10,7 @@ import { LoggedHeader } from './components/LoggedHeader'
 import LoginView from './views/LoginView'
 import LoggedInView from './views/LoggedInView'
 import LoggedOutView from './views/LoggedOutView'
+import Address from './views/Address'
 
 class App extends Component {
   constructor(props) {
@@ -51,6 +52,8 @@ class App extends Component {
             <Route path="/LoginView" component={LoginView} />
             <Route path="/LoggedInView" component={LoggedInView} />
             <Route path="/LoggedOutView" component={LoggedOutView} />
+            <Route path="/address" component={Address } />
+            
           </Switch>
         </Provider>
       </div>
