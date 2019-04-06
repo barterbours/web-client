@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { authContainer } from "../containers/authentication";
+import "../styles/login.css";
 
 export default class LoginView extends Component {
   constructor(props) {
@@ -9,11 +10,12 @@ export default class LoginView extends Component {
 
   render() {
     return (
-      <div>
+      <div className="login">
+
         <Button onClick={async () => {
           await window.sessionStorage.setItem("isLoggedIn", true)
           window.location.href = "/";
-        }}>Log In</Button>
+        }} className="btn btn-danger"> <span className="fa fa-google"></span>  |  Sign in with Google</Button>
       </div >
     );
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/index.css"
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logout from '../components/Logout'
 
@@ -17,10 +17,12 @@ export const LoggedHeader = props => {
           <Nav.Link href="/MatchingView">Matching</Nav.Link>
           <Nav.Link href='/OffersFillingForm'>Offers</Nav.Link>
         </Nav>
-        <Nav>
-          <Logout />
-        </Nav>
       </Navbar.Collapse>
+      <Nav>
+        <NavDropdown title="User Name">
+          <Logout />
+        </NavDropdown>
+      </Nav>
     </Navbar>
   );
 }
