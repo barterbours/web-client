@@ -1,23 +1,24 @@
 import React from "react";
 import "../styles/index.css"
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Logout from '../components/Logout'
 
-export const UnloggedHeader = props => {
+export const LoggedHeader = props => {
   return (
-    <Navbar expand="sm" variant="light" bg="light">
+    <Navbar expand="sm" variant="light" bg="info">
       <Navbar.Brand exact to="/" as={Link}>
         BarterHood
         </Navbar.Brand>
-      <Link to="/">MainPage</Link>
+      <Nav><Nav.Link href="/">Map</Nav.Link></Nav>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto" navbar >
-          <Nav.Link>okokokok</Nav.Link>
-          <Nav.Link >aaaa</Nav.Link>
+          <Nav.Link href="/MatchingView">Matching</Nav.Link>
+          <Nav.Link href='/OffersFillingForm'>Offers</Nav.Link>
         </Nav>
         <Nav>
-          <NavDropdown.Item className="ml-auto" href="/LoginView" >Login</NavDropdown.Item>
+          <Logout />
         </Nav>
       </Navbar.Collapse>
     </Navbar>

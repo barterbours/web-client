@@ -10,8 +10,7 @@ export default class LoginView extends Component {
     render() {
         return (
             <div>
-                <h1>Hiiiii</h1>
-                <h2>Welcome to our page !</h2>
+                <h1>Logged Out View</h1>
             </div>
         );
     }

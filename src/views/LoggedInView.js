@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Icon } from "semantic-ui-react";
 
 export default class LoginView extends Component {
     constructor(props) {
@@ -8,8 +9,13 @@ export default class LoginView extends Component {
     render() {
         return (
             <div>
-                <h1>Hiiiii</h1>
-                <h2>Thanks for logging in!</h2>
+                <Icon
+                    size="large"
+                    name="minus circle"
+                    onClick={async () => {
+                        this.setState({ refresh: !this.state.refresh });
+                    }}
+                />
             </div>
         );
     }

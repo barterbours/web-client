@@ -17,7 +17,7 @@ export default class Logout extends Component {
         console.log("aa")
         window.sessionStorage.removeItem("isLoggedIn");
         if (window.sessionStorage.getItem("isLoggedIn") === null) {
-          window.location.href = "/LoggedOutView";
+          window.location.href = "/";
         }
       }
     });

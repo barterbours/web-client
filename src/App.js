@@ -5,11 +5,16 @@ import { Switch, Route } from "react-router-dom";
 
 import { authContainer } from './containers/authentication'
 
-import { UnloggedHeader } from './components/UnloggedHeader'
-import { LoggedHeader } from './components/LoggedHeader'
+import { UnloggedHeader } from './headers/UnloggedHeader'
+import { LoggedHeader } from './headers/LoggedHeader'
+
 import LoginView from './views/LoginView'
 import LoggedInView from './views/LoggedInView'
 import LoggedOutView from './views/LoggedOutView'
+import DataFillingForm from './views/DataFillingForm'
+import MatchingView from './views/MatchingView'
+import OffersFillingForm from './views/OffersFillingForm'
+import SimpleChat from './views/SimpleChat'
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +22,15 @@ class App extends Component {
     this.state = {
 
     };
+  }
+
+  getProperRoot() {
+    if (window.sessionStorage.getItem("isLoggedIn")) {
+      return LoggedInView
+    }
+    {
+      return LoggedOutView
+    }
   }
 
   getProperHeader() {
@@ -46,11 +60,13 @@ class App extends Component {
             <Route
               exact
               path="/"
-              component={LoggedOutView}
+              component={this.getProperRoot()}
             />
             <Route path="/LoginView" component={LoginView} />
-            <Route path="/LoggedInView" component={LoggedInView} />
-            <Route path="/LoggedOutView" component={LoggedOutView} />
+            <Route path="/DataFillingForm" component={DataFillingForm} />
+            <Route path="/MatchingView" component={MatchingView} />
+            <Route path="/OffersFillingForm" component={OffersFillingForm} />
+            <Route path="/SimpleChat" component={SimpleChat} />
           </Switch>
         </Provider>
       </div>

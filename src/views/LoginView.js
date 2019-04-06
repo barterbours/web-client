@@ -10,11 +10,9 @@ export default class LoginView extends Component {
   render() {
     return (
       <div>
-        <h1>Hiiiii</h1>
-        <h2>Lets Log in !</h2>
         <Button onClick={async () => {
           await window.sessionStorage.setItem("isLoggedIn", true)
-          window.location.href = "/LoggedInView";
+          window.location.href = "/";
         }}>Log In</Button>
       </div >
     );
