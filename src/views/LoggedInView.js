@@ -9,13 +9,7 @@ export default class LoginView extends Component {
     render() {
         return (
             <div>
-                <Icon
-                    size="large"
-                    name="minus circle"
-                    onClick={async () => {
-                        this.setState({ refresh: !this.state.refresh });
-                    }}
-                />
+                <h1>Logged In View</h1>
             </div>
         );
     }
