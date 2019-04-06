@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const UnloggedHeader = props => {
   return (
-    <Navbar expand="sm" >
+    <Navbar expand="sm" variant="light" bg="light">
       <Navbar.Brand exact to="/" as={Link}>
         BarterHood
         </Navbar.Brand>
@@ -17,7 +17,7 @@ export const UnloggedHeader = props => {
           <Nav.Link >aaaa</Nav.Link>
         </Nav>
         <Nav>
-          <NavDropdown.Item className="ml-auto" href="/LoginView">Login</NavDropdown.Item>
+          <NavDropdown.Item className="ml-auto" href="/LoginView" >Login</NavDropdown.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

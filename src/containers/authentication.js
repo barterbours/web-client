@@ -1,9 +1,8 @@
 import React from 'react';
-
 import { Container } from 'unstated'
 import Cookies from 'universal-cookie';
 
-class SomeContainer extends Container {
+class AuthenticationContainer extends Container {
     state = {
     }
 
@@ -14,4 +13,4 @@ class SomeContainer extends Container {
     }
 
 }
-export const someContainer = new SomeContainer()
+export const authContainer = new AuthenticationContainer()

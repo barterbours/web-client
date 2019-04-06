@@ -6,7 +6,7 @@ import Logout from './Logout'
 
 export const LoggedHeader = props => {
   return (
-    <Navbar expand="sm" variant="dark" bg="dark">
+    <Navbar expand="sm" variant="light" bg="light">
       <Navbar.Brand exact to="/" as={Link}>
         BarterHood
         </Navbar.Brand>
@@ -18,7 +18,7 @@ export const LoggedHeader = props => {
           <Nav.Link >aaaa</Nav.Link>
         </Nav>
         <Nav>
-          <Logout/>
+          <Logout />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
