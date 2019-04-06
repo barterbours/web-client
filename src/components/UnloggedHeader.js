@@ -1,15 +1,15 @@
 import React from "react";
 import "../styles/index.css"
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const Header = props => {
+export const UnloggedHeader = props => {
   return (
     <Navbar expand="sm" >
       <Navbar.Brand exact to="/" as={Link}>
-        AAAA
+        BarterHood
         </Navbar.Brand>
-      <Link to="/smthn">aa</Link>
+      <Link to="/">MainPage</Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto" navbar >
@@ -17,7 +17,7 @@ export const Header = props => {
           <Nav.Link >aaaa</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link>AAAA</Nav.Link>
+          <NavDropdown.Item className="ml-auto" href="/LoginView">Login</NavDropdown.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
