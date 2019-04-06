@@ -7,14 +7,22 @@ class OffersContainer extends Container {
         qualities: ['111', '222'],
         possessions: ['245678', '3456789'],
         quality: '',
-        possesion: '',
+        possession: '',
     }
 
     cookies = new Cookies()
 
-    function() {
+    async submit(variant) {
+        if (variant === 'quality') {
+            await this.state.qualities.push(this.state.quality)
+            this.setState({ quality: '' })
+        } else {
+            await this.state.possessions.push(this.state.possession)
+            this.setState({ possession: '' })
+        }
 
     }
+
 
 }
 export const offersContainer = new OffersContainer()
