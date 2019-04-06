@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Row, Col, Form, Button } from "react-bootstrap";
-import Sidebar from "../temp/sidebar"
 import CustomersService from '../temp/Api';
 
 const customersService = new CustomersService();
@@ -81,10 +80,7 @@ export default class Address extends Component {
         return (
             <div>
                 <Row>
-                    <Col sm={2} className="side">
-                        <Sidebar />
-                    </Col>
-
+                    <Col />
                     <Col sm={9} className="main" style={{ marginTop: "120px" }}>
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Row>
@@ -128,10 +124,10 @@ export default class Address extends Component {
 
                             <Button variant="primary" type="submit" href="/LoggedInView">
                                 Submit
-                  </Button>
+                            </Button>
                         </Form>
-
                     </Col>
+                    <Col />
                 </Row>
             </div>
         )

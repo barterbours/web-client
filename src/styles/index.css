@@ -18,3 +18,71 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(-360deg); }
 }
+
+.login{
+  margin: 0 auto;
+  max-width: 300px;
+  margin-top: 230px;
+
+}
+.btn{
+  padding: 10px;
+  width: 300px;
+  font-size: 22px;
+}
+
+.side{
+  height: 100%;
+  background-color: green;
+}
+.map{
+  margin-top: 100px;
+  margin: 0 auto;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+
+  background-color: #111;
+  padding-top: 20px;
+}
+
+.sidenavHeader {
+  padding: 1px 1px 50px 15px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #818181;
+  display: flex;
+  text-align: center;
+}
+
+.sidenavHeader {
+  padding: 1px 1px 50px 15px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #818181;
+  display: flex;
+}
+
+.sidenavItems {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 21px;
+  color: #818181;
+  display: flex;
+}
+
+.sidenavItemF {
+  padding: 50% 6px 6px 32px;
+  text-decoration: none;
+  font-size: 21px;
+  color: #818181;
+  display: flex;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}

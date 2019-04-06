@@ -21,6 +21,12 @@ export const LoggedHeader = props => {
       <Nav>
         <NavDropdown title="User Name">
           <Logout />
+          <NavDropdown.Item className="ml-auto" href="/DataFillingForm">
+            Adress
+          </NavDropdown.Item>
+          <NavDropdown.Item className="ml-auto" href="/SimpleChat">
+            Mailbox
+          </NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar>

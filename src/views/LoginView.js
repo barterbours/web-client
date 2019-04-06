@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import { authContainer } from "../containers/authentication";
-import "../styles/login.css";
 
 export default class LoginView extends Component {
   constructor(props) {
