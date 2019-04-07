@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row } from "react-bootstrap";
+import Carousel from 'react-bootstrap/Carousel'
+
 
 export default class MatchingView extends Component {
     constructor(props) {
@@ -8,14 +10,10 @@ export default class MatchingView extends Component {
 
     render() {
         return (
-            <div>
-                <Row>
+            <div style={{ width: '100%', height: '100%' }}>
 
-                </Row>
-                <Row>
-
-                </Row>
             </div>
+
         );
     }
 }

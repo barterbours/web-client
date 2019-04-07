@@ -19,6 +19,11 @@
   color: white;
 }
 
+.sticky{
+  position: fixed;
+  top: 0px;
+}
+
 .switch {
   height: 100vh;
 }

@@ -38,11 +38,11 @@ class App extends Component {
   getProperHeader() {
     if (window.sessionStorage.getItem("isLoggedIn")) {
       return (
-        <LoggedHeader refresh={() => { this.setState({ refresh: !this.state.refresh }) }} />
+        <LoggedHeader className='sticky' refresh={() => { this.setState({ refresh: !this.state.refresh }) }} />
       )
     }
     return (
-      <UnloggedHeader
+      <UnloggedHeader className='sticky'
         refresh={() => {
           this.setState({ refresh: !this.state.refresh });
         }}
