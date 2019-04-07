@@ -43,15 +43,15 @@
 
 .sidenav {
   height: 100%;
-  width: 180px;
+  width: 34vh;
   position: fixed;
-
   background-color: #111;
   padding-top: 20px;
 }
 
 .sidenavHeader {
-  padding: 1px 1px 50px 15px;
+  padding: 1px 1px 100px 15px;
+  text-align: left;
   text-decoration: none;
   font-size: 23px;
   color: #818181;
@@ -76,4 +76,9 @@
 
 .sidenav a:hover {
   color: #f1f1f1;
+}
+
+.container {
+  display: flex;
+  width: 100vh
 }

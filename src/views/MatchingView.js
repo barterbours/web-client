@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Row } from "react-bootstrap";
 
 export default class MatchingView extends Component {
     constructor(props) {
@@ -8,7 +9,12 @@ export default class MatchingView extends Component {
     render() {
         return (
             <div>
-                <h1>Matching View</h1>
+                <Row>
+
+                </Row>
+                <Row>
+
+                </Row>
             </div>
         );
     }

@@ -4,9 +4,7 @@ import Cookies from 'universal-cookie';
 
 class OffersContainer extends Container {
     state = {
-        qualities: ['111', '222'],
-        possessions: ['245678', '3456789'],
-        hashtags: ['lalala', 'ebebebebe']
+        hashtags: ['lalala', 'ebebebebe', 'sjhdvjhsvdjh', 'gdvjhsvh']
     }
 
     cookies = new Cookies()

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, InputGroup, Table, Col } from "react-bootstrap";
+import { Form, InputGroup, Table, Col, Row } from "react-bootstrap";
 import { offersContainer } from "../containers/offers";
 import { Icon, Button as ButtonManager } from "semantic-ui-react";
 import { authContainer } from "../containers/authentication";
@@ -18,6 +18,87 @@ export default class OffersFillingForm extends Component {
             trigger: false,
         };
     }
+
+    handleRender() {
+        if (offersContainer.state.hashtags.length > 2) {
+            var halfwayPoint = Math.floor(offersContainer.state.hashtags.length / 3)
+            var columnA = offersContainer.state.hashtags.slice(0, halfwayPoint)
+            var columnB = offersContainer.state.hashtags.slice(halfwayPoint, 2 * halfwayPoint)
+            var columnC = offersContainer.state.hashtags.slice(2 * halfwayPoint)
+        } else if (offersContainer.state.hashtags.length > 1) {
+            var halfwayPoint = Math.floor(offersContainer.state.hashtags.length / 2)
+            var columnA = offersContainer.state.hashtags.slice(0, halfwayPoint)
+            var columnB = offersContainer.state.hashtags.slice(halfwayPoint)
+            var columnC = []
+        } else {
+            var columnA = offersContainer.state.hashtags
+            var columnB = []
+            var columnC = []
+        }
+        return (
+            <Row>
+                <Col>
+                    {columnA.map((value, index) => {
+                        return (
+                            <tr><td style={{ width: '50vh' }}>{value}</td>
+                                <td><Icon
+                                    size="large"
+                                    name="minus circle"
+                                    onClick={async () => {
+                                        await offersContainer.state.hashtags.splice(
+                                            index,
+                                            1
+                                        );
+                                        this.setState({ refresh: !this.state.refresh });
+                                    }}
+                                /></td>
+                            </tr>
+                        )
+                    })}
+
+                </Col>
+                <Col >
+                    {columnB.map((value, index) => {
+                        return (
+                            <tr><td style={{ width: '50vh' }}>{value}</td>
+                                <td><Icon
+                                    size="large"
+                                    name="minus circle"
+                                    onClick={async () => {
+                                        await offersContainer.state.hashtags.splice(
+                                            (index + halfwayPoint),
+                                            1
+                                        );
+                                        this.setState({ refresh: !this.state.refresh });
+                                    }}
+                                /></td>
+                            </tr>
+                        )
+                    })}
+                </Col>
+                <Col >
+                    {columnC.map((value, index) => {
+                        return (
+                            <tr><td style={{ width: '50vh' }}>{value}</td>
+                                <td><Icon
+                                    size="large"
+                                    name="minus circle"
+                                    onClick={async () => {
+                                        await offersContainer.state.hashtags.splice(
+                                            (index + 2 * halfwayPoint),
+                                            1
+                                        );
+                                        this.setState({ refresh: !this.state.refresh });
+                                    }}
+                                /></td>
+                            </tr>
+                        )
+                    })}
+                </Col>
+            </Row>
+        )
+    }
+
 
     ifTriggered() {
         if (this.state.trigger) {
@@ -38,34 +119,16 @@ export default class OffersFillingForm extends Component {
 
     render() {
         return (
-            <div>
-                <Table hover>
-                    <thead>
+            <div style={{ backgroundColor: '#868f95', width: '100%', height: '100%' }}>
+                <Table hover style={{ width: '100%' }}>
+                    <thead style={{ backgroundColor: '#d6d9db', textAlign: 'center' }}>
                         <tr>
-                            <th>Add Hashtags</th>
+                            <td><h1>Add Hashtags</h1></td>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
-                            {offersContainer.state.hashtags.map((value, index) => {
-                                return (
-                                    <tr>
-                                        <td>{value}</td>
-                                        <td><Icon
-                                            size="large"
-                                            name="minus circle"
-                                            onClick={async () => {
-                                                await offersContainer.state.hashtags.splice(
-                                                    index,
-                                                    1
-                                                );
-                                                this.setState({ refresh: !this.state.refresh });
-                                            }}
-                                        />
-                                        </td>
-                                    </tr>
-                                )
-                            })}
+                            {this.handleRender()}
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group as={Col} md="3" controlId="validationCustomUsername">
                                     <Form.Label>Add a Hashtag</Form.Label>

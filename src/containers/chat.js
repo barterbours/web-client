@@ -11,10 +11,19 @@ class ChatContainer extends Container {
                 'variant': 'starred'
                 // can be: starred unread or all
             },
-            {},
-        ],
-        unread: [{}],
-        starred: [{}]
+            {
+                'userEmail': 'lalalala@lala.la',
+                'message': 'tfcusdwvdyuvdyibwbhbh',
+                'variant': 'unread'
+                // can be: starred unread or all
+            },
+            {
+                'userEmail': 'lalalala@lala.la',
+                'message': 'sdfghjvctfybjvsudgvsghdvghsdvhvsd',
+                'variant': 'starred'
+                // can be: starred unread or all
+            },
+        ]
     }
 
     cookies = new Cookies()
