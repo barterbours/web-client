@@ -18,6 +18,7 @@ import SimpleChat from './views/SimpleChat'
 import GeoLocation from './views/GeoLocation'
 import Registe from './views/Registe'
 import Display from './views/MapDisplay'
+import Matching from './views/Matching'
 
 class App extends Component {
   constructor(props) {
@@ -73,6 +74,7 @@ class App extends Component {
             <Route path="/location" component={GeoLocation} />
             <Route path="/register" component={Registe} />
             <Route path="/map" component={Display} />
+            <Route path="/matching" component={Matching} />
           </Switch>
         </Provider>
       </div>
