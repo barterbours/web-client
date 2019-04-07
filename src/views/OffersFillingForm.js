@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { Form, InputGroup, Table } from "react-bootstrap";
+import { Form, InputGroup, Table, Col } from "react-bootstrap";
 import { offersContainer } from "../containers/offers";
 import { Icon, Button as ButtonManager } from "semantic-ui-react";
 import { authContainer } from "../containers/authentication";
+import color from "@material-ui/core/colors/blueGrey";
 
 
 export default class OffersFillingForm extends Component {
@@ -12,18 +13,27 @@ export default class OffersFillingForm extends Component {
         this.state = {
             refresh: false,
             quality: "",
-            possession: ""
+            possession: "",
+            hashtag: "",
+            trigger: false,
         };
     }
 
-    handleChange(e) {
-        if (e.target.name === "quality") {
-            offersContainer.setState({ quality: e.target.value })
+    ifTriggered() {
+        if (this.state.trigger) {
+            return <div style={{ background: '#e0e1e2', textAlign: 'center', width: '91%' }}><Form.Label style={{ color: 'red' }}>Only one word u idiot</Form.Label></div>
         }
-        if (
-            e.target.name === "possession") {
-            offersContainer.setState({ possession: e.target.value })
-        }
+    }
+
+    handleSubmit() {
+        var check = this.state.hashtag.split(" ");
+        if (check.length >= 2) {
+            this.setState({ trigger: true })
+        } else {
+            this.setState({ trigger: false });
+            offersContainer.state.hashtags.push(this.state.hashtag)
+            this.setState({ hashtag: "" });
+        };
     }
 
     render() {
@@ -32,13 +42,12 @@ export default class OffersFillingForm extends Component {
                 <Table hover>
                     <thead>
                         <tr>
-                            <th>Qualities</th>
-                            <th>Possessions</th>
+                            <th>Add Hashtags</th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>
-                            {offersContainer.state.qualities.map((value, index) => {
+                            {offersContainer.state.hashtags.map((value, index) => {
                                 return (
                                     <tr>
                                         <td>{value}</td>
@@ -46,7 +55,7 @@ export default class OffersFillingForm extends Component {
                                             size="large"
                                             name="minus circle"
                                             onClick={async () => {
-                                                await offersContainer.state.qualities.splice(
+                                                await offersContainer.state.hashtags.splice(
                                                     index,
                                                     1
                                                 );
@@ -57,75 +66,36 @@ export default class OffersFillingForm extends Component {
                                     </tr>
                                 )
                             })}
-                            <Form.Label>Add Quality</Form.Label>
-                            <InputGroup onChange={this.handleChange}>
-                                <Form.Control
-                                    type="text"
-                                    name="quality"
-                                    value={this.state.quality}
-                                    onChange={e => { this.setState({ quality: e.target.value }) }}
-                                />
-                                <InputGroup.Append>
-                                    <ButtonManager
-                                        onClick={async () => {
-                                            await offersContainer.state.qualities.push(this.state.quality)
-                                            this.setState({ quality: "" });
-                                        }}
-                                        size="mini"
-                                        icon
-                                    >
-                                        <Icon
-                                            size="large"
-                                            name="plus circle"
+                            <Form onSubmit={this.handleSubmit}>
+                                <Form.Group as={Col} md="3" controlId="validationCustomUsername">
+                                    <Form.Label>Add a Hashtag</Form.Label>
+                                    <InputGroup />
+                                    {this.ifTriggered()}
+                                    <InputGroup>
+                                        <InputGroup.Prepend>
+                                            <InputGroup.Text id="inputGroupPrepend">#</InputGroup.Text>
+                                        </InputGroup.Prepend>
+                                        <Form.Control
+                                            type="text"
+                                            name="hashtag"
+                                            value={this.state.hashtag}
+                                            onChange={e => { this.setState({ hashtag: e.target.value }); }}
                                         />
-                                    </ButtonManager>
-                                </InputGroup.Append>
-                            </InputGroup>
-                        </td>
-                        <td>
-                            {offersContainer.state.possessions.map((value, index) => {
-                                return (
-                                    <tr>
-                                        <td>{value}</td>
-                                        <td><Icon
-                                            size="large"
-                                            name="minus circle"
-                                            onClick={async () => {
-                                                await offersContainer.state.possessions.splice(
-                                                    index,
-                                                    1
-                                                );
-                                                this.setState({ refresh: !this.state.refresh });
-                                            }}
-                                        />
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                            <Form.Label>Add Possession</Form.Label>
-                            <InputGroup onChange={this.handleChange}>
-                                <Form.Control
-                                    type="text"
-                                    name="possession"
-                                    value={this.state.possession}
-                                    onChange={e => { this.setState({ possession: e.target.value }) }}
-                                />
-                                <InputGroup.Append>
-                                    <ButtonManager
-                                        onClick={async () => {
-                                            await offersContainer.state.possessions.push(this.state.possession)
-                                            this.setState({ possession: "" });
-                                        }}
-                                        size="mini"
-                                        icon
-                                    >
-                                        <Icon
-                                            size="large"
-                                            name="plus circle"
-                                        />
-                                    </ButtonManager>
-                                </InputGroup.Append>
-                            </InputGroup>
+                                        <InputGroup.Append>
+                                            <ButtonManager
+                                                onClick={this.handleSubmit}
+                                                size="mini"
+                                                icon
+                                            >
+                                                <Icon
+                                                    size="large"
+                                                    name="plus circle"
+                                                />
+                                            </ButtonManager>
+                                        </InputGroup.Append>
+                                    </InputGroup>
+                                </Form.Group>
+                            </Form>
                         </td>
                     </tbody>
                 </Table>

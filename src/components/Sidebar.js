@@ -7,7 +7,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidenav">
-        <b><Icon name="user circle" size="large" /> Username</b>
+        <sidenavHeader><Icon name="user circle" size="large" /> Username</sidenavHeader>
         <c />
         <c />
         <c><Icon name="mix" /> All mail</c>

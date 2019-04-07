@@ -11,7 +11,11 @@ export default class LoginView extends Component {
       <div className="login">
 
         <Button onClick={async () => {
-          await window.sessionStorage.setItem("isLoggedIn", true)
+          // console.log("aa")
+          // const request = await fetch("http://localhost:3000/auth/google");
+          // const data = await request.json()
+          // console.log(data)
+          window.sessionStorage.setItem("isLoggedIn", true)
           window.location.href = "/";
         }} className="btn btn-danger"> <span className="fa fa-google"></span>  |  Sign in with Google</Button>
       </div >
