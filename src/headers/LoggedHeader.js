@@ -16,6 +16,7 @@ export const LoggedHeader = props => {
         <Nav className="ml-auto" navbar >
           <Nav.Link href="/MatchingView">Matching</Nav.Link>
           <Nav.Link href='/OffersFillingForm'>Offers</Nav.Link>
+          <Nav.Link href='/location'>Address</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       <Nav>

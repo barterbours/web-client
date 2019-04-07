@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Col, Row,Form } from "react-bootstrap";
 
-export default class LoginView extends Component {
+export default class Registe extends Component {
   constructor(props) {
     super(props);
   }
@@ -37,14 +37,19 @@ export default class LoginView extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
+          
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control type="password" placeholder="Confirm Password" />
+          </Form.Group>
           <Form.Group controlId="formBasicChecbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
           <Button onClick={async () => {
           window.sessionStorage.setItem("isLoggedIn", true)
           window.location.href = "/";
-        }} variant="primary" type="submit">
-            Login
+           }} variant="primary" type="submit">
+            Register
           </Button>
         </Form>
         

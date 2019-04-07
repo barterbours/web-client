@@ -15,6 +15,7 @@ export const UnloggedHeader = props => {
         <Nav className="ml-auto" navbar />
         <Nav>
           <NavDropdown.Item className="ml-auto" href="/LoginView" >Login</NavDropdown.Item>
+          <NavDropdown.Item className="ml-auto" href="/register" >Register</NavDropdown.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
