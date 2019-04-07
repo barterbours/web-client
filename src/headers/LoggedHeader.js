@@ -14,7 +14,7 @@ export const LoggedHeader = props => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav className="ml-auto" navbar >
-          <Nav.Link href="/MatchingView">Matching</Nav.Link>
+          <Nav.Link href="/matching">Matching</Nav.Link>
           <Nav.Link href='/OffersFillingForm'>Offers</Nav.Link>
           <Nav.Link href='/location'>Address</Nav.Link>
         </Nav>
