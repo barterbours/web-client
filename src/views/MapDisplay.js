@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Map from "./Map";
 
-import './style.css';
+// import './style.css';
 
 const data = [
   {
@@ -27,10 +27,11 @@ const data = [
   }
 ];
 
-const App = () => (
-  <div style={{ width: "100%", height: "400px" }}>
+const Display = () => (
+  <div style={{ width: "80", height: "100%" }}>
     <Map data={data} center={{ lat: 59.339025, lng: 18.065818 }} zoom={4} />
   </div>
 );
 
-render(<App />, document.getElementById('root'));
+
+export default Display;

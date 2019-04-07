@@ -26,7 +26,8 @@ const MapExample = ({ center, zoom, data }) => {
         return (
           <div lat={item.location[0]} lng={item.location[1]}>
             <img style={markerStyle} src={pin} alt="pin" />
-            
+            <div className="text-danger" style={{ fontSize: "19px"}}>{item.name}</div>
+            {/* <div className="text-danger" style={{ fontSize: "19px"}}>{item.email}</div> */}
           </div>
         );
       })}

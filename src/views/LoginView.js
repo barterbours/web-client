@@ -9,7 +9,7 @@ export default class LoginView extends Component {
   render() {
     return (
       <div className="loginn">
-
+<h1 style={{ textAlign: "center"}}>Neighbour Login </h1>
         <Button onClick={async () => {
           // console.log("aa")
           // const request = await fetch("http://localhost:3000/auth/google");
@@ -43,9 +43,7 @@ export default class LoginView extends Component {
           <Button onClick={async () => {
           window.sessionStorage.setItem("isLoggedIn", true)
           window.location.href = "/";
-        }} variant="primary" type="submit">
-            Login
-          </Button>
+        }} variant="primary"> Login </Button>
         </Form>
         
       </div >

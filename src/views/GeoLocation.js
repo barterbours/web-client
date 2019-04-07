@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import "./Geo.css";
+// import "./index.js"
+
+
 
 
 class GeoLocation extends Component {

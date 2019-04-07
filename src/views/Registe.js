@@ -9,7 +9,7 @@ export default class Registe extends Component {
   render() {
     return (
       <div className="loginn">
-
+        <h1 style={{ textAlign: "center"}}> Neighbour Register </h1>
         <Button onClick={async () => {
           // console.log("aa")
           // const request = await fetch("http://localhost:3000/auth/google");
@@ -43,14 +43,12 @@ export default class Registe extends Component {
             <Form.Control type="password" placeholder="Confirm Password" />
           </Form.Group>
           <Form.Group controlId="formBasicChecbox">
-            <Form.Check type="checkbox" label="Check me out" />
+            <Form.Check type="checkbox" label="Agree Terms And Condition" />
           </Form.Group>
           <Button onClick={async () => {
           window.sessionStorage.setItem("isLoggedIn", true)
           window.location.href = "/";
-           }} variant="primary" type="submit">
-            Register
-          </Button>
+        }} variant="primary"> Register </Button>
         </Form>
         
       </div >
