@@ -156,7 +156,9 @@ export default class Sidenav extends Component {
                                                 <td>{value.userEmail}</td>
                                                 <td>{value.message}</td>
                                                 <td><ButtonManager onClick={() => { this.handleReply(index) }}><Icon name='send' />Reply</ButtonManager></td>
-                                                <td>fucking checkboxes pls help fuck</td>
+                                                <td>
+                                                    <Form><input type="checkbox" id="scales" name="scales"
+                                                    /></Form></td>
                                             </tr>
                                         )
                                     } else if (value.variant === this.state.option) {
@@ -175,7 +177,9 @@ export default class Sidenav extends Component {
                                                 <td>{value.userEmail}</td>
                                                 <td>{value.message}</td>
                                                 <td><ButtonManager onClick={() => { this.handleReply(index) }}><Icon name='send' />Reply</ButtonManager></td>
-                                                <td>fucking checkboxes pls help fuck</td>
+                                                <td>
+                                                    <Form><input type="checkbox" id="scales" name="scales"
+                                                    /></Form></td>
                                             </tr>
                                         )
                                     }
