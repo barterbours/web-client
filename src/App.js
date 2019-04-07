@@ -17,6 +17,7 @@ import OffersFillingForm from './views/OffersFillingForm'
 import SimpleChat from './views/SimpleChat'
 import GeoLocation from './views/GeoLocation'
 import Registe from './views/Registe'
+import Display from './views/MapDisplay'
 
 class App extends Component {
   constructor(props) {
@@ -71,6 +72,7 @@ class App extends Component {
             <Route path="/SimpleChat" component={SimpleChat} />
             <Route path="/location" component={GeoLocation} />
             <Route path="/register" component={Registe} />
+            <Route path="/map" component={Display} />
           </Switch>
         </Provider>
       </div>

@@ -164,7 +164,7 @@ export default class Registe extends Component {
   render() {
     return (
       <div className="loginn">
-
+        <h1 style={{ textAlign: "center" }}> Neighbour Register </h1>
         <Button onClick={async () => {
           // console.log("aa")
           // const request = await fetch("http://localhost:3000/auth/google");

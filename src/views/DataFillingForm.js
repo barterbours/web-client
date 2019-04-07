@@ -79,9 +79,12 @@ export default class Address extends Component {
     render() {
         return (
             <div>
+                
                 <Row>
                     <Col />
+                    
                     <Col sm={9} className="main" style={{ marginTop: "120px" }}>
+                    <h1 style={{ textAlign: "center"}}> Add Your Details </h1>
                         <Form onSubmit={this.handleSubmit}>
                             <Form.Row>
                                 <Form.Group as={Col} controlId="formGridEmail">
