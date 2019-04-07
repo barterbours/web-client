@@ -15,6 +15,7 @@ import DataFillingForm from './views/DataFillingForm'
 import MatchingView from './views/MatchingView'
 import OffersFillingForm from './views/OffersFillingForm'
 import SimpleChat from './views/SimpleChat'
+import GeoLocation from './views/GeoLocation'
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +68,7 @@ class App extends Component {
             <Route path="/MatchingView" component={MatchingView} />
             <Route path="/OffersFillingForm" component={OffersFillingForm} />
             <Route path="/SimpleChat" component={SimpleChat} />
+            <Route path="/location" component={GeoLocation} />
           </Switch>
         </Provider>
       </div>
