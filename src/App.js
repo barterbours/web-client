@@ -18,6 +18,7 @@ import SimpleChat from './views/SimpleChat'
 import GeoLocation from './views/GeoLocation'
 import Registe from './views/Registe'
 import Display from './views/MapDisplay'
+import { offersContainer } from "./containers/offers";
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class App extends Component {
   }
 
   render() {
+    window.sessionStorage.setItem('offers', offersContainer.state.hashtags)
     return (
       <div
         className="switch"

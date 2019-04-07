@@ -146,7 +146,16 @@ export default class OffersFillingForm extends Component {
                                         />
                                         <InputGroup.Append>
                                             <ButtonManager
-                                                onClick={this.handleSubmit}
+                                                onClick={() => {
+                                                    var check = this.state.hashtag.split(" ");
+                                                    if (check.length >= 2) {
+                                                        this.setState({ trigger: true })
+                                                    } else {
+                                                        this.setState({ trigger: false });
+                                                        offersContainer.state.hashtags.push(this.state.hashtag)
+                                                        this.setState({ hashtag: "" });
+                                                    };
+                                                }}
                                                 size="mini"
                                                 icon
                                             >

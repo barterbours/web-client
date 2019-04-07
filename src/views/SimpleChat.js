@@ -6,7 +6,9 @@ import { Icon, Form } from 'semantic-ui-react';
 import { chatContainer } from '../containers/chat';
 import { Button as ButtonManager } from "semantic-ui-react";
 import Swal from 'sweetalert2';
-// import Blockies from "react-blockies";
+import Blockies from "react-blockies";
+import { SHA256 } from "sha2";
+
 
 
 
